@@ -1,0 +1,541 @@
+﻿<!doctype html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UltraFit — Perte de poids & Prise de masse</title>
+  <meta name="description" content="UltraFit : le site moderne pour perdre du poids, prendre de la masse et suivre vos performances. Calculs IMC/TDEE, macros, entraînements et nutrition." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] } } } }</script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .glass{backdrop-filter:saturate(180%) blur(10px); background: color-mix(in sRGB, var(--tw-bg-opacity,1) black 0%, transparent);}
+  </style>
+</head>
+<body class="bg-gradient-to-b from-white to-slate-50 text-slate-900 dark:from-slate-950 dark:to-slate-900 dark:text-slate-100 font-sans">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-slate-200/60 dark:border-slate-800/60 bg-white/70 dark:bg-slate-950/60 glass">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="h-8 w-8 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-500 grid place-items-center text-white">
+          <i data-lucide="zap" class="h-4 w-4"></i>
+        </div>
+        <span class="font-extrabold tracking-tight text-lg">UltraFit</span>
+        <span class="ml-2 text-xs px-2 py-0.5 rounded-full border border-slate-200 dark:border-slate-700">Beta</span>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#features" class="hover:opacity-80">Fonctionnalités</a>
+        <a href="#calculs" class="hover:opacity-80">Calculs</a>
+        <a href="#workouts" class="hover:opacity-80">Entraînements</a>
+        <a href="#nutrition" class="hover:opacity-80">Nutrition</a>
+        <a href="#pricing" class="hover:opacity-80">Tarifs</a>
+        <a href="#faq" class="hover:opacity-80">FAQ</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="themeToggle" class="text-sm px-3 py-1.5 border rounded-2xl border-slate-200 dark:border-slate-700 flex items-center gap-2">
+          <i data-lucide="sun" class="h-4 w-4"></i>
+          <span>Mode</span>
+        </button>
+        <a href="#" class="text-sm px-3 py-1.5 rounded-2xl bg-slate-900 text-white dark:bg-white dark:text-slate-900">Télécharger l'app</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative">
+    <div class="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-indigo-500/10 blur-3xl"></div>
+    <div class="max-w-7xl mx-auto px-4 py-14 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <span class="inline-flex items-center gap-2 text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 mb-4">
+          <i data-lucide="sparkles" class="h-4 w-4"></i> Nouveau
+        </span>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
+          Votre coach intelligent pour <span class="bg-gradient-to-r from-indigo-500 to-violet-500 bg-clip-text text-transparent">perdre du poids</span> et <span class="bg-gradient-to-r from-indigo-500 to-violet-500 bg-clip-text text-transparent">prendre de la masse</span>
+        </h1>
+        <p class="mt-5 text-slate-600 dark:text-slate-300 text-lg md:text-xl">UltraFit combine science de la nutrition, programmation d'entraînement et analytics pour des résultats durables.</p>
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <a href="#calculs" class="px-5 py-3 rounded-2xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 inline-flex items-center gap-2"><i data-lucide="play" class="h-4 w-4"></i> Commencer</a>
+          <a href="#features" class="px-5 py-3 rounded-2xl border border-slate-200 dark:border-slate-700">Découvrir les features</a>
+          <div class="flex items-center text-sm text-slate-600 dark:text-slate-300 gap-2"><i data-lucide="shield-check" class="h-4 w-4"></i> 14 jours satisfait ou remboursé</div>
+        </div>
+        <div class="mt-6 flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
+          <div class="flex items-center gap-2"><i data-lucide="star" class="h-4 w-4"></i> 4.9/5 (12k avis)</div>
+          <div class="flex items-center gap-2"><i data-lucide="smartphone" class="h-4 w-4"></i> iOS • Android • Web</div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="absolute -inset-6 rounded-3xl bg-gradient-to-tr from-indigo-500/20 to-transparent blur-2xl"></div>
+        <div class="rounded-3xl shadow-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+          <div class="p-5 border-b border-slate-200 dark:border-slate-800">
+            <h3 class="font-semibold flex items-center gap-2"><i data-lucide="layout-grid" class="h-5 w-5"></i> Aperçu rapide</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300">Vos chiffres d'aujourd'hui</p>
+          </div>
+          <div class="p-5 grid gap-4">
+            <div class="grid grid-cols-2 gap-3 text-sm">
+              <div class="rounded-2xl border p-3 border-slate-200 dark:border-slate-800">
+                <div class="flex items-center justify-between text-slate-600 dark:text-slate-300"><span class="flex items-center gap-2"><i data-lucide="scale" class="h-4 w-4"></i> Poids</span></div>
+                <div id="mini-weight" class="mt-2 text-xl font-semibold">76 kg</div>
+              </div>
+              <div class="rounded-2xl border p-3 border-slate-200 dark:border-slate-800">
+                <div class="flex items-center justify-between text-slate-600 dark:text-slate-300"><span class="flex items-center gap-2"><i data-lucide="activity" class="h-4 w-4"></i> TDEE</span></div>
+                <div id="mini-tdee" class="mt-2 text-xl font-semibold">—</div>
+              </div>
+              <div class="rounded-2xl border p-3 border-slate-200 dark:border-slate-800">
+                <div class="flex items-center justify-between text-slate-600 dark:text-slate-300"><span class="flex items-center gap-2"><i data-lucide="heart-pulse" class="h-4 w-4"></i> IMC</span></div>
+                <div class="mt-2 text-xl font-semibold"><span id="mini-bmi">—</span> <span id="mini-bmi-label" class="block text-xs font-normal text-slate-600 dark:text-slate-300"></span></div>
+              </div>
+              <div class="rounded-2xl border p-3 border-slate-200 dark:border-slate-800">
+                <div class="flex items-center justify-between text-slate-600 dark:text-slate-300"><span class="flex items-center gap-2"><i data-lucide="flame" class="h-4 w-4"></i> Objectif</span></div>
+                <div id="mini-target" class="mt-2 text-xl font-semibold">—</div>
+              </div>
+            </div>
+            <div class="w-full bg-slate-200/60 dark:bg-slate-800/60 h-2 rounded-full overflow-hidden">
+              <div id="progress-bar" class="h-2 bg-gradient-to-r from-indigo-500 to-violet-500 w-[35%]"></div>
+            </div>
+            <div class="text-xs text-slate-600 dark:text-slate-300">La jauge s'adapte à l'objectif sélectionné.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="max-w-7xl mx-auto px-4 py-12">
+    <div class="grid md:grid-cols-4 gap-5">
+      <div class="rounded-3xl border p-5 border-slate-200 dark:border-slate-800">
+        <div class="font-semibold flex items-center gap-2"><i data-lucide="flame" class="h-5 w-5"></i> Perte de poids rapide</div>
+        <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">Suivi calorique intelligent et ajustements hebdomadaires basés sur vos progrès.</p>
+      </div>
+      <div class="rounded-3xl border p-5 border-slate-200 dark:border-slate-800">
+        <div class="font-semibold flex items-center gap-2"><i data-lucide="dumbbell" class="h-5 w-5"></i> Prise de masse solide</div>
+        <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">Plans structurés (Full-body, PPL) et surcharge progressive.</p>
+      </div>
+      <div class="rounded-3xl border p-5 border-slate-200 dark:border-slate-800">
+        <div class="font-semibold flex items-center gap-2"><i data-lucide="heart-pulse" class="h-5 w-5"></i> Santé au cœur</div>
+        <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">Cardio, récupération et stress tracking pour tenir sur le long terme.</p>
+      </div>
+      <div class="rounded-3xl border p-5 border-slate-200 dark:border-slate-800">
+        <div class="font-semibold flex items-center gap-2"><i data-lucide="bar-chart-3" class="h-5 w-5"></i> Analytics clairs</div>
+        <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">Progression du poids, des perfs et des mensurations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculs -->
+  <section id="calculs" class="max-w-7xl mx-auto px-4 py-12">
+    <div class="grid lg:grid-cols-3 gap-6">
+      <!-- Form -->
+      <div class="rounded-3xl border border-slate-200 dark:border-slate-800">
+        <div class="p-5 border-b border-slate-200 dark:border-slate-800">
+          <h3 class="font-semibold flex items-center gap-2"><i data-lucide="bar-chart-3" class="h-5 w-5"></i> Vos données</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300">Personnalisez les calculs en temps réel</p>
+        </div>
+        <div class="p-5 grid gap-4">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="text-sm">Sexe</label>
+              <div class="mt-2 flex gap-2">
+                <button id="sexH" class="px-3 py-1.5 border rounded-md text-sm border-slate-200 dark:border-slate-700 bg-slate-900 text-white dark:bg-white dark:text-slate-900">Homme</button>
+                <button id="sexF" class="px-3 py-1.5 border rounded-md text-sm border-slate-200 dark:border-slate-700">Femme</button>
+              </div>
+            </div>
+            <div>
+              <label for="age" class="text-sm">Âge</label>
+              <input id="age" type="number" value="28" class="mt-2 w-full px-3 py-2 border rounded-md border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900" />
+            </div>
+            <div>
+              <label for="height" class="text-sm">Taille (cm)</label>
+              <input id="height" type="number" value="178" class="mt-2 w-full px-3 py-2 border rounded-md border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900" />
+            </div>
+            <div>
+              <label for="weight" class="text-sm">Poids (kg)</label>
+              <input id="weight" type="number" value="76" class="mt-2 w-full px-3 py-2 border rounded-md border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900" />
+            </div>
+          </div>
+          <div>
+            <label class="text-sm">Niveau d'activité</label>
+            <div class="mt-2 grid grid-cols-5 gap-2 text-xs">
+              <button data-act="1.2" class="act-btn px-2.5 py-1.5 border rounded-md border-slate-200 dark:border-slate-700">x1.2</button>
+              <button data-act="1.375" class="act-btn px-2.5 py-1.5 border rounded-md border-slate-200 dark:border-slate-700">x1.375</button>
+              <button data-act="1.55" class="act-btn px-2.5 py-1.5 border rounded-md border-slate-200 dark:border-slate-700 bg-slate-900 text-white dark:bg-white dark:text-slate-900">x1.55</button>
+              <button data-act="1.725" class="act-btn px-2.5 py-1.5 border rounded-md border-slate-200 dark:border-slate-700">x1.725</button>
+              <button data-act="1.9" class="act-btn px-2.5 py-1.5 border rounded-md border-slate-200 dark:border-slate-700">x1.9</button>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2">Sédentaire → x1.2 • Très actif → x1.9</p>
+          </div>
+        </div>
+        <div class="px-5 py-4 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-300">Les calculs sont des estimations et ne remplacent pas un avis médical.</div>
+      </div>
+
+      <!-- Résultats -->
+      <div class="rounded-3xl border border-slate-200 dark:border-slate-800 lg:col-span-2">
+        <div class="p-5 border-b border-slate-200 dark:border-slate-800">
+          <h3 class="font-semibold flex items-center gap-2"><i data-lucide="brain" class="h-5 w-5"></i> Recommandations intelligentes</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300">Mises à jour selon votre objectif</p>
+        </div>
+        <div class="p-5 grid gap-6">
+          <div class="flex gap-2">
+            <button data-goal="perte" class="goal-btn px-3 py-1.5 rounded-md border border-slate-200 dark:border-slate-700 bg-slate-900 text-white dark:bg-white dark:text-slate-900">Perte</button>
+            <button data-goal="maintien" class="goal-btn px-3 py-1.5 rounded-md border border-slate-200 dark:border-slate-700">Maintien</button>
+            <button data-goal="masse" class="goal-btn px-3 py-1.5 rounded-md border border-slate-200 dark:border-slate-700">Masse</button>
+          </div>
+
+          <div class="rounded-2xl border p-4 md:p-6 border-slate-200 dark:border-slate-800">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h4 id="goal-title" class="text-lg font-semibold">Déficit raisonnable</h4>
+                <p id="goal-desc" class="text-sm text-slate-600 dark:text-slate-300 mt-1">Un déficit d'environ 500 kcal/j aide à perdre ~0,5 kg/semaine sans sacrifier la masse musculaire.</p>
+              </div>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800">Recommandé</span>
+            </div>
+            <div class="mt-4 grid sm:grid-cols-3 gap-4">
+              <div class="rounded-3xl border border-slate-200 dark:border-slate-800 p-4">
+                <div class="font-semibold flex items-center gap-2"><i data-lucide="beef" class="h-4 w-4"></i> Protéines</div>
+                <div id="macro-p" class="text-slate-600 dark:text-slate-300">— g / jour</div>
+              </div>
+              <div class="rounded-3xl border border-slate-200 dark:border-slate-800 p-4">
+                <div class="font-semibold flex items-center gap-2"><i data-lucide="apple" class="h-4 w-4"></i> Glucides</div>
+                <div id="macro-c" class="text-slate-600 dark:text-slate-300">— g / jour</div>
+              </div>
+              <div class="rounded-3xl border border-slate-200 dark:border-slate-800 p-4">
+                <div class="font-semibold flex items-center gap-2"><i data-lucide="salad" class="h-4 w-4"></i> Lipides</div>
+                <div id="macro-f" class="text-slate-600 dark:text-slate-300">— g / jour</div>
+              </div>
+              <div class="sm:col-span-3 text-sm text-slate-600 dark:text-slate-300">Total cible : <span id="target-cal">—</span> kcal / jour</div>
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-3 gap-4">
+            <div class="rounded-3xl border p-4 border-slate-200 dark:border-slate-800">
+              <div class="text-sm flex items-center gap-2 text-slate-600 dark:text-slate-300"><i data-lucide="flame" class="h-4 w-4"></i> TDEE estimé</div>
+              <div id="tdee" class="text-2xl font-bold">— kcal</div>
+            </div>
+            <div class="rounded-3xl border p-4 border-slate-200 dark:border-slate-800">
+              <div class="text-sm flex items-center gap-2 text-slate-600 dark:text-slate-300"><i data-lucide="apple" class="h-4 w-4"></i> Calories objectif</div>
+              <div id="calories-obj" class="text-2xl font-bold">— kcal / jour</div>
+            </div>
+            <div class="rounded-3xl border p-4 border-slate-200 dark:border-slate-800">
+              <div class="text-sm flex items-center gap-2 text-slate-600 dark:text-slate-300"><i data-lucide="scale" class="h-4 w-4"></i> IMC</div>
+              <div class="text-2xl font-bold"><span id="bmi">—</span> <span id="bmi-label" class="block text-xs font-normal text-slate-600 dark:text-slate-300"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workouts -->
+  <section id="workouts" class="max-w-7xl mx-auto px-4 py-12">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl md:text-3xl font-bold flex items-center gap-2"><i data-lucide="dumbbell" class="h-6 w-6"></i> Entraînements guidés</h2>
+      <div class="flex items-center gap-2">
+        <button data-goal="perte" class="goal-switch px-3 py-1.5 rounded-md border border-slate-200 dark:border-slate-700">Perte</button>
+        <button data-goal="masse" class="goal-switch px-3 py-1.5 rounded-md border border-slate-200 dark:border-slate-700">Masse</button>
+      </div>
+    </div>
+    <div id="workout-grid" class="grid md:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- Nutrition -->
+  <section id="nutrition" class="max-w-7xl mx-auto px-4 py-12">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl md:text-3xl font-bold flex items-center gap-2"><i data-lucide="salad" class="h-6 w-6"></i> Plans nutrition</h2>
+      <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+        <i data-lucide="beef" class="h-4 w-4"></i> Omnivore
+        <span class="ml-3 inline-flex items-center gap-2 opacity-60"><i data-lucide="sprout" class="h-4 w-4"></i> Végé (bientôt)</span>
+      </div>
+    </div>
+    <div id="meal-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="max-w-7xl mx-auto px-4 py-12">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-2"><i data-lucide="star" class="h-6 w-6"></i> Tarifs ultra simples</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="rounded-3xl border border-slate-200 dark:border-slate-800 p-5">
+        <div class="flex items-center justify-between"><h3 class="font-semibold">Free</h3></div>
+        <div class="text-3xl font-bold mt-1">0€</div>
+        <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4"></i> Calculs de base</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4"></i> 3 entraînements</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4"></i> 2 plans repas</li>
+        </ul>
+        <a href="#" class="mt-5 inline-block w-full text-center px-4 py-2 rounded-2xl bg-slate-900 text-white dark:bg-white dark:text-slate-900">Essayer</a>
+      </div>
+      <div class="rounded-3xl border border-indigo-500/70 p-5 shadow-lg">
+        <div class="flex items-center justify-between"><h3 class="font-semibold">Pro</h3><span class="text-xs px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-300">Populaire</span></div>
+        <div class="text-3xl font-bold mt-1">12€ / mois</div>
+        <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4"></i> Programmes illimités</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4"></i> Plans repas dynamiques</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4"></i> Suivi avancé & analytics</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4"></i> Export PDF & CSV</li>
+        </ul>
+        <a href="#" class="mt-5 inline-block w-full text-center px-4 py-2 rounded-2xl bg-slate-900 text-white dark:bg-white dark:text-slate-900">Choisir Pro</a>
+      </div>
+      <div class="rounded-3xl border border-slate-200 dark:border-slate-800 p-5">
+        <div class="flex items-center justify-between"><h3 class="font-semibold">Coach</h3></div>
+        <div class="text-3xl font-bold mt-1">49€ / mois</div>
+        <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4"></i> Accès client illimité</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4"></i> Tableau de bord Coach</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4"></i> Messagerie & Feedback</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4"></i> Marque blanche UltraFit</li>
+        </ul>
+        <a href="#" class="mt-5 inline-block w-full text-center px-4 py-2 rounded-2xl bg-slate-900 text-white dark:bg-white dark:text-slate-900">Devenir Coach</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Témoignages -->
+  <section class="max-w-7xl mx-auto px-4 py-12">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">Ils ont atteint leurs objectifs</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="rounded-3xl border border-slate-200 dark:border-slate-800 p-5">
+        <h3 class="font-semibold">Transformation 1</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300">“UltraFit m'a donné un cadre clair et motivant. Mes perfs explosent.”</p>
+        <div class="mt-3 text-xs text-slate-500">Note 5/5</div>
+      </div>
+      <div class="rounded-3xl border border-slate-200 dark:border-slate-800 p-5">
+        <h3 class="font-semibold">Transformation 2</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300">“Les calculs automatiques de macros m'ont changé la vie.”</p>
+        <div class="mt-3 text-xs text-slate-500">Note 5/5</div>
+      </div>
+      <div class="rounded-3xl border border-slate-200 dark:border-slate-800 p-5">
+        <h3 class="font-semibold">Transformation 3</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300">“Des résultats visibles, et je comprends enfin quoi manger.”</p>
+        <div class="mt-3 text-xs text-slate-500">Note 5/5</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-7xl mx-auto px-4 py-12">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">Questions fréquentes</h2>
+    <details class="rounded-2xl border p-4 mb-3 border-slate-200 dark:border-slate-800">
+      <summary class="font-medium cursor-pointer">UltraFit est-il adapté aux débutants ?</summary>
+      <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Oui, les plans sont progressifs et les calculs s'ajustent à votre niveau et vos retours.</p>
+    </details>
+    <details class="rounded-2xl border p-4 mb-3 border-slate-200 dark:border-slate-800">
+      <summary class="font-medium cursor-pointer">Comment sont calculées les calories ?</summary>
+      <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Mifflin-St Jeor pour estimer le TDEE, puis déficit/surplus selon l'objectif.</p>
+    </details>
+    <details class="rounded-2xl border p-4 border-slate-200 dark:border-slate-800">
+      <summary class="font-medium cursor-pointer">Puis-je changer d'objectif à tout moment ?</summary>
+      <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Oui, basculez entre perte, maintien et masse : macros & programmes s'actualisent instantanément.</p>
+    </details>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-4 gap-6 text-sm">
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <div class="h-7 w-7 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-500 grid place-items-center text-white"><i data-lucide="zap" class="h-4 w-4"></i></div>
+          <span class="font-extrabold">UltraFit</span>
+        </div>
+        <p class="text-slate-600 dark:text-slate-300">Science + simplicité pour des résultats durables.</p>
+      </div>
+      <div>
+        <p class="font-semibold mb-2">Produit</p>
+        <ul class="space-y-1 text-slate-600 dark:text-slate-300">
+          <li><a href="#features">Fonctionnalités</a></li>
+          <li><a href="#pricing">Tarifs</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold mb-2">Ressources</p>
+        <ul class="space-y-1 text-slate-600 dark:text-slate-300">
+          <li>Blog (bientôt)</li>
+          <li>Guides nutrition</li>
+          <li>Guides entraînement</li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold mb-2">Légal</p>
+        <ul class="space-y-1 text-slate-600 dark:text-slate-300">
+          <li>Confidentialité</li>
+          <li>Conditions</li>
+          <li>Cookies</li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 pb-8 text-xs text-slate-500">© <span id="year"></span> UltraFit. Tous droits réservés.</div>
+  </footer>
+
+  <script>
+    // --- Icons ---
+    lucide.createIcons();
+
+    // --- Theme toggle ---
+    const themeBtn = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    const preferred = localStorage.getItem('theme');
+    if (preferred === 'dark' || (!preferred && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      root.classList.add('dark');
+    }
+    themeBtn.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    // --- Data ---
+    const workouts = [
+      { id: 1, goal: 'perte', title: 'Full-Body Express', duration: 35, focus: 'Global', kcal: 280 },
+      { id: 2, goal: 'masse', title: 'Push (Pecs/Épaules/Triceps)', duration: 60, focus: 'Haut du corps', kcal: 480 },
+      { id: 3, goal: 'masse', title: 'Pull (Dos/Biceps)', duration: 55, focus: 'Haut du corps', kcal: 430 },
+      { id: 4, goal: 'perte', title: 'HIIT x Core', duration: 30, focus: 'Cardio + Abdos', kcal: 300 },
+      { id: 5, goal: 'masse', title: 'Legs (Quadris/Ischios)', duration: 65, focus: 'Bas du corps', kcal: 520 },
+    ];
+    const meals = [
+      { id: 1, title: 'Bowl protéiné poulet & quinoa', kcal: 620, p: 48, c: 60, f: 18, tag: 'masse' },
+      { id: 2, title: 'Omelette épinards + toast complet', kcal: 420, p: 32, c: 35, f: 16, tag: 'perte' },
+      { id: 3, title: 'Yaourt grec + fruits rouges + avoine', kcal: 380, p: 28, c: 48, f: 9, tag: 'perte' },
+      { id: 4, title: 'Pâtes bolo maigre (veau/soja)', kcal: 700, p: 45, c: 90, f: 15, tag: 'masse' },
+    ];
+
+    // --- Helpers ---
+    const $ = s => document.querySelector(s);
+    const $$ = s => Array.from(document.querySelectorAll(s));
+    const nf = new Intl.NumberFormat('fr-FR');
+
+    function bmi(weightKg, heightCm){
+      if (!weightKg || !heightCm) return {bmi: 0, label: '—'};
+      const h = heightCm/100; const val = weightKg/(h*h);
+      let label = 'Poids normal';
+      if (val < 18.5) label = 'Insuffisance pondérale';
+      else if (val < 25) label = 'Poids normal';
+      else if (val < 30) label = 'Surpoids';
+      else label = 'Obésité';
+      return {bmi: val, label};
+    }
+    function tdee(weight, height, age, sex, activity){
+      const s = sex === 'H' ? 5 : -161;
+      const bmr = 10*weight + 6.25*height - 5*age + s; // Mifflin-St Jeor
+      return bmr * activity;
+    }
+    function macros(calories, goal){
+      const r = goal === 'masse' ? {p:.30,c:.50,f:.20} : goal === 'perte' ? {p:.35,c:.40,f:.25} : {p:.30,c:.45,f:.25};
+      return {
+        p: Math.round((calories*r.p)/4),
+        c: Math.round((calories*r.c)/4),
+        f: Math.round((calories*r.f)/9),
+      };
+    }
+
+    // --- State ---
+    let state = { sex: 'H', age: 28, height: 178, weight: 76, activity: 1.55, goal: 'perte' };
+
+    // --- UI bindings ---
+    const ageEl = $('#age');
+    const heightEl = $('#height');
+    const weightEl = $('#weight');
+    const actBtns = $$('.act-btn');
+    const sexH = $('#sexH');
+    const sexF = $('#sexF');
+    const goalBtns = $$('.goal-btn');
+    const goalSwitch = $$('.goal-switch');
+
+    function setActive(btns, predicate){
+      btns.forEach(b => {
+        if (predicate(b)) b.classList.add('bg-slate-900','text-white','dark:bg-white','dark:text-slate-900');
+        else b.classList.remove('bg-slate-900','text-white','dark:bg-white','dark:text-slate-900');
+      });
+    }
+
+    sexH.addEventListener('click', () => { state.sex = 'H'; sexH.click; sexH.classList.add('bg-slate-900','text-white','dark:bg-white','dark:text-slate-900'); sexF.classList.remove('bg-slate-900','text-white','dark:bg-white','dark:text-slate-900'); update(); });
+    sexF.addEventListener('click', () => { state.sex = 'F'; sexF.classList.add('bg-slate-900','text-white','dark:bg-white','dark:text-slate-900'); sexH.classList.remove('bg-slate-900','text-white','dark:bg-white','dark:text-slate-900'); update(); });
+
+    ageEl.addEventListener('input', e => { state.age = parseInt(e.target.value||'0'); update(); });
+    heightEl.addEventListener('input', e => { state.height = parseInt(e.target.value||'0'); update(); });
+    weightEl.addEventListener('input', e => { state.weight = parseFloat(e.target.value||'0'); update(); });
+    actBtns.forEach(b => b.addEventListener('click', () => { state.activity = parseFloat(b.dataset.act); setActive(actBtns, x=>x===b); update(); }));
+
+    goalBtns.forEach(b => b.addEventListener('click', () => { state.goal = b.dataset.goal; setActive(goalBtns, x=>x===b); update(); }));
+    goalSwitch.forEach(b => b.addEventListener('click', () => { state.goal = b.dataset.goal; updateWorkouts(); updateMeals(); setActive(goalSwitch, x=>x===b); setGoalCopy(); setProgress(); updateMini(); }));
+
+    // --- Render functions ---
+    function setGoalCopy(){
+      const title = $('#goal-title');
+      const desc = $('#goal-desc');
+      if (state.goal==='perte'){ title.textContent='Déficit raisonnable'; desc.textContent="Un déficit d'environ 500 kcal/j aide à perdre ~0,5 kg/semaine sans sacrifier la masse musculaire."; }
+      else if (state.goal==='maintien'){ title.textContent='Stabilité métabolique'; desc.textContent='Consolidez vos habitudes alimentaires et votre routine sportive pour stabiliser votre poids.'; }
+      else { title.textContent='Surplus contrôlé'; desc.textContent='Un léger surplus de ~300 kcal/j optimise la prise de muscle en limitant la graisse.'; }
+    }
+    function setProgress(){
+      const bar = $('#progress-bar');
+      const w = state.goal==='perte'?35:(state.goal==='masse'?70:50);
+      bar.style.width = w+'%';
+    }
+
+    function update(){
+      const { sex, age, height, weight, activity, goal } = state;
+      const t = tdee(weight, height, age, sex, activity);
+      const target = Math.round(goal==='perte' ? t-500 : goal==='masse' ? t+300 : t);
+      const m = macros(target, goal);
+      const { bmi: bmiVal, label } = bmi(weight, height);
+
+      $('#tdee').textContent = nf.format(Math.round(t))+' kcal';
+      $('#calories-obj').textContent = nf.format(target)+' kcal / jour';
+      $('#bmi').textContent = bmiVal?bmiVal.toFixed(1):'—';
+      $('#bmi-label').textContent = label;
+      $('#target-cal').textContent = nf.format(target);
+      $('#macro-p').textContent = m.p+' g / jour';
+      $('#macro-c').textContent = m.c+' g / jour';
+      $('#macro-f').textContent = m.f+' g / jour';
+
+      setGoalCopy();
+      setProgress();
+      updateMini();
+    }
+
+    function updateMini(){
+      const { sex, age, height, weight, activity, goal } = state;
+      $('#mini-weight').textContent = weight + ' kg';
+      const t = tdee(weight, height, age, sex, activity);
+      const target = Math.round(goal==='perte' ? t-500 : goal==='masse' ? t+300 : t);
+      const { bmi: bmiVal, label } = bmi(weight, height);
+      $('#mini-tdee').textContent = nf.format(Math.round(t)) + ' kcal';
+      $('#mini-target').textContent = nf.format(target) + ' kcal/j';
+      $('#mini-bmi').textContent = bmiVal?bmiVal.toFixed(1):'—';
+      $('#mini-bmi-label').textContent = label;
+    }
+
+    function card(title, desc, meta){
+      return `<div class="rounded-3xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col justify-between">
+        <div>
+          <h3 class="font-semibold">${title}</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300">${desc}</p>
+        </div>
+        <div class="mt-3 text-xs text-slate-500">${meta}</div>
+      </div>`;
+    }
+
+    function updateWorkouts(){
+      const grid = $('#workout-grid');
+      const list = workouts.filter(w => state.goal==='maintien' ? true : w.goal===state.goal);
+      grid.innerHTML = list.map(w => card(w.title, `${w.focus} • ${w.duration} min`, `~${w.kcal} kcal`)).join('');
+    }
+    function updateMeals(){
+      const grid = $('#meal-grid');
+      const list = meals.filter(m => state.goal==='maintien' ? true : m.tag===state.goal);
+      grid.innerHTML = list.map(m => card(m.title, `${m.kcal} kcal • P${m.p}/G${m.c}/L${m.f}`, 'Adapté à votre objectif')).join('');
+    }
+
+    // Init
+    document.getElementById('year').textContent = new Date().getFullYear();
+    setActive($$('.act-btn'), b=>parseFloat(b.dataset.act)===state.activity);
+    setActive($$('.goal-btn'), b=>b.dataset.goal===state.goal);
+    lucide.createIcons();
+    update();
+    updateWorkouts();
+    updateMeals();
+  </script>
+</body>
+</html>
